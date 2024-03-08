@@ -1,4 +1,3 @@
-
 const Locator = require("../pageLocators/locators")
 
 class LoginPage {
@@ -27,7 +26,6 @@ class LoginPage {
         const congratsText = await getCongratsText.getText()
         return congratsText
     }
-
 }
 
 
