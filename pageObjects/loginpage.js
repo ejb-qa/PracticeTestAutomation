@@ -6,14 +6,14 @@ class LoginPage {
         this.driver = driver
     }
 
-    async enterUsername() {
+    async enterUsername(username) {
         const enterUsername = await this.driver.findElement(Locator.usernameField)
-        await enterUsername.sendKeys("student")
+        await enterUsername.sendKeys(username)
     }
 
-    async enterPassword() {
+    async enterPassword(password) {
         const enterPassword = await this.driver.findElement(Locator.passwordField)
-        await enterPassword.sendKeys("Password123")
+        await enterPassword.sendKeys(password)
     }
 
     async selectSubmit() {

@@ -8,7 +8,6 @@ const expect = chai.expect
 
 const testURL = "https://practicetestautomation.com/practice-test-login/"
 
-
 describe("Login page", function () {
     let loginPage
     let driver
@@ -20,14 +19,12 @@ describe("Login page", function () {
     })
 
     it("Successfully logs the user in when using valid credentials", async function () {
-        await loginPage.enterUsername()
-        await loginPage.enterPassword()
+        await loginPage.enterUsername("student")
+        await loginPage.enterPassword("Password123")
         await loginPage.selectSubmit()
-    })
 
-    it("Checks that the user is able to login successfully ", async function () {
         const successText = await loginPage.getSuccessLoginText()
-        expect(successText, "Congratulations student. You successfully logged in!").to.exist
+        expect(successText).to.equal("Congratulations student. You successfully logged in!")
     })
 
     after(async function () {
